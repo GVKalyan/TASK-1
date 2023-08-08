@@ -55,9 +55,9 @@ function App() {
         </div>
         <div className="row">
           <div className="d-flex justify-content-evenly mt-5">
-            <button onClick={like} type="button" className="btn btn-danger">like</button>
-            <button onClick={dislike} type="button" className="btn btn-success">Dislike</button>
-            <button onClick={reset} className="btn btn-primary">reset</button>
+            <button onClick={like} type="button" className="btn btn-danger">Like</button>
+            <button onClick={dislike} type="button" className="btn btn-success">DisLike</button>
+            <button onClick={reset} className="btn btn-primary">Reset</button>
           </div>
         </div>
         <div className="row mt-4">
