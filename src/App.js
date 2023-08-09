@@ -9,9 +9,8 @@ function App() {
 
 
   const like = () => {
-
-    if (state < 10) {
-      let x = state+ +value
+    let x = state+parseInt(value)
+    if (x <= 10) {
       setState(x)
     } else if (state > 10) {
       setState(state)
