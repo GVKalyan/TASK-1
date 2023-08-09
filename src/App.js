@@ -4,20 +4,26 @@ import '../node_modules/bootstrap/dist/js/bootstrap.js'
 import { useState } from "react";
 function App() {
 
-  const [state, setState] = useState(0)
+  let [state, setState] = useState(0)
+  let [value, setValue] = useState(1)
+
 
   const like = () => {
 
     if (state < 10) {
-      setState(state + 1)
+      let x = state+ +value
+      setState(x)
     } else if (state > 10) {
       setState(state)
     }
-
   }
 
   const dislike = () => {
-    setState(state - 1)
+      if(state<=0){
+        setState(0)
+      }else if(state>0){
+        setState(state - value)
+      }
   }
 
   const reset = () => {
@@ -53,11 +59,20 @@ function App() {
             </button>
           </div>
         </div>
+         <div className="row">
+              <div className="col-md-12 d-flex justify-content-center mt-5">
+                 <h1>Enter the amount for Increment or Decrement</h1>
+              </div>
+              <div className="col-md-12 d-flex justify-content-center mt-5">
+                 <input type="number" className="form-control bg-success-subtle w-25" placeholder="Type Here" value={value} onChange={(e)=>{setValue(e.target.value)}} />
+              </div>
+         </div>
+
         <div className="row">
           <div className="d-flex justify-content-evenly mt-5">
-            <button onClick={like} type="button" className="btn btn-danger">Like</button>
-            <button onClick={dislike} type="button" className="btn btn-success">DisLike</button>
-            <button onClick={reset} className="btn btn-primary">Reset</button>
+            <button onClick={like} type="button" className="btn btn-danger"><img src="thumb-up.png" className="me-1"/>Like</button>
+            <button onClick={dislike} type="button" className="btn btn-success"><img src="thumb-down.png" className="me-1"/>DisLike</button>
+            <button onClick={reset} className="btn btn-primary"><img src="undo.png" className="me-1"/>Reset</button>
           </div>
         </div>
         <div className="row mt-4">
